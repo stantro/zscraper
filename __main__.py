@@ -20,4 +20,4 @@ if __name__ == "__main__":
 
         close_db(mongo_client)
 
-        time.sleep(10)
+        time.sleep(30)
