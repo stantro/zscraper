@@ -2,13 +2,16 @@ import time
 from .packages.utils import *
 
 if __name__ == "__main__":
+    
+    config = get_config()
+
     while True:
-
-        config = get_config()
-
+        
         response = request(config)
 
         response_json = convert_response(response)
+
+        config['start'] = response_json['end_time']
 
         tickets = change_key(response_json['tickets'])
 
