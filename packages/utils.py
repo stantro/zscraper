@@ -67,8 +67,10 @@ def get_collection(config, client):
     return database[collection]
 
 def store(collection, list):
-    
-    collection.insert_many(list)
+
+    for ticket in list:
+        if collection.find_one({"zendesk_id":{"$eq": ticket['zendesk_id']}}) is None:
+            collection.insert_one(ticket)
 
 def close_db(client):
     
