@@ -4,7 +4,7 @@ from .packages.utils import *
 if __name__ == "__main__":
     while True:
 
-        config = get_config(test=True)
+        config = get_config()
 
         response = request(config)
 
