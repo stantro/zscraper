@@ -10,9 +10,7 @@ if __name__ == "__main__":
         response = request(config)
 
         response_json = convert_response(response)
-
-        print(response_json.keys(), type(response_json))
-
+        
         config['start'] = str(response_json['end_time'])
 
         tickets = change_key(response_json['tickets'])
